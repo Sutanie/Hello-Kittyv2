@@ -41,8 +41,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      clip-path: path('M 0.5 0 C 0.2 0 0 0.3 0 0.55 C 0 0.8 0.3 1 0.5 1 C 0.7 1 1 0.8 1 0.55 C 1 0.3 0.8 0 0.5 0 Z');
-      animation: pulse 1.5s infinite;
+      z-index: 10; /* Added z-index */
+      /* clip-path: path('M 0.5 0 C 0.2 0 0 0.3 0 0.55 C 0 0.8 0.3 1 0.5 1 C 0.7 1 1 0.8 1 0.55 C 1 0.3 0.8 0 0.5 0 Z'); Remove or comment out for testing */
+      opacity: 1; /* Ensure it's visible */
     }
 
     .big-heart h1 {
@@ -51,11 +52,6 @@
       text-align: center;
       padding: 10px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added text shadow */
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: translate(-50%, -50%) scale(1); }
-      50% { transform: translate(-50%, -50%) scale(1.1); }
     }
 
     .hello-kitty {
