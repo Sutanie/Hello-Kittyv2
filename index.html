@@ -23,92 +23,70 @@
 
     .container {
       position: relative;
-      width: 400px; /* Width of the envelope */
-      height: 300px; /* Height of the envelope */
+      width: 100%;
+      height: 100%;
       text-align: center;
-      perspective: 1000px; /* 3D perspective for the envelope effect */
     }
 
-    .envelope {
-      width: 100%;
-      height: 100%;
-      background-color: white;
-      border: 2px solid red;
-      position: relative;
-      transition: transform 0.6s;
-      transform-origin: top; /* Transform from the top */
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .envelope.open {
-      transform: rotateX(-180deg); /* Rotate to open */
-    }
-
-    .envelope .flap {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: red;
-      top: 0;
-      left: 0;
-      clip-path: polygon(0 0, 100% 0, 50% 100%); /* Envelope flap */
-    }
-
-    .message {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: white;
-      color: red;
-      font-size: 22px;
-      text-align: center;
-      opacity: 0; /* Start hidden */
-      transition: opacity 0.6s; /* Fade-in effect */
-      transform: rotateX(180deg); /* Keep the message upright */
-    }
-
-    .envelope.open .message {
-      opacity: 1; /* Show message when open */
-    }
-
-    .big-heart {
-      position: absolute;
-      top: 10%; /* Adjust position */
-      left: 50%;
-      transform: translate(-50%, 0) rotate(-45deg); /* Center and rotate */
-      width: 60px; /* Adjust size */
-      height: 60px; /* Adjust size */
+    .heart {
       background-color: red;
       display: inline-block;
-      animation: pulse 1s ease infinite; /* Pulsating animation */
+      height: 30px;
+      margin: 0 10px;
+      position: relative;
+      transform: rotate(-45deg);
+      width: 30px;
+      animation: pulse 1s ease infinite; /* Added pulsing animation */
     }
 
-    .big-heart:before,
-    .big-heart:after {
+    .heart:before,
+    .heart:after {
       content: "";
       background-color: red;
       border-radius: 50%;
-      height: 30px; /* Adjust size */
+      height: 30px;
       position: absolute;
-      width: 30px; /* Adjust size */
+      width: 30px;
     }
 
-    .big-heart:before {
+    .heart:before {
       top: -15px;
       left: 0;
     }
 
-    .big-heart:after {
+    .heart:after {
       left: 15px;
       top: 0;
     }
 
+    @keyframes pulse {
+      0% { transform: scale(1) rotate(-45deg); }
+      50% { transform: scale(1.3) rotate(-45deg); }
+      100% { transform: scale(1) rotate(-45deg); }
+    }
+
+    .big-heart {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; /* Added for vertical alignment */
+    }
+
+    .big-heart h1 {
+      color: white;
+      font-size: 22px;
+      text-align: center;
+      padding: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added text shadow */
+    }
+
     .hello-kitty {
       position: absolute;
-      width: 60px; /* Adjust size */
+      width: 100px;
       height: auto;
       animation: float 6s ease-in-out infinite;
     }
@@ -125,12 +103,6 @@
       50% { transform: translateY(-10px); }
       100% { transform: translateY(0); }
     }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.3); }
-      100% { transform: scale(1); }
-    }
   </style>
 </head>
 <body>
@@ -143,22 +115,11 @@
     <img src="https://github.com/Sutanie/Hello-Kittyv2/raw/main/adorable-hello-kitty-head-hd-transparent-png-735811696670199l8qnq79qof__1_-removebg-preview%20(1).png" class="hello-kitty" alt="Hello Kitty">
     <img src="https://github.com/Sutanie/Hello-Kittyv2/raw/main/adorable-hello-kitty-head-hd-transparent-png-735811696670199l8qnq79qof__1_-removebg-preview%20(1).png" class="hello-kitty" alt="Hello Kitty">
 
-    <!-- Envelope -->
-    <div class="envelope" id="envelope">
-      <div class="flap"></div>
-      <div class="message">I love you, Adaeze!!!</div>
+    <!-- Big Heart with the message -->
+    <div class="big-heart">
+      <div class="heart"></div> <!-- Heart shape -->
+      <h1>I love you, Adaeze!!!</h1>
     </div>
-
-    <!-- Pulsating Heart -->
-    <div class="big-heart"></div>
   </div>
-
-  <script>
-    // Open the envelope on page load
-    window.onload = () => {
-      const envelope = document.getElementById('envelope');
-      envelope.classList.add('open');
-    };
-  </script>
 </body>
 </html>
