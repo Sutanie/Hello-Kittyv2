@@ -35,18 +35,18 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 400px;
-      height: 400px;
+      width: 200px;  /* Adjusted size */
+      height: 200px; /* Adjusted size */
       background-color: red;
       display: flex;
       justify-content: center;
       align-items: center;
-      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Updated to create a heart shape */
+      clip-path: path('M 50 0 C 80 0, 100 30, 100 70 C 100 110, 50 200, 50 200 C 50 200, 0 110, 0 70 C 0 30, 20 0, 50 0 Z');
     }
 
     .big-heart h1 {
       color: white;
-      font-size: 32px; /* Increased font size */
+      font-size: 22px;
       text-align: center;
       padding: 10px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added text shadow */
