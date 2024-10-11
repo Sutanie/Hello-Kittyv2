@@ -88,13 +88,14 @@
     }
 
     .big-heart {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: none; /* Hide initially */
-      flex-direction: column; /* Added for vertical alignment */
-      text-align: center; /* Center text */
+      position: relative; /* Change to relative */
+      display: flex; /* Keep it as flex */
+      flex-direction: column; /* Vertical alignment */
+      justify-content: center; /* Center vertically */
+      align-items: center; /* Center horizontally */
+      top: 50%; /* Move it down by 50% */
+      transform: translateY(-50%); /* Correct for the height */
+      margin-top: 20px; /* Add some space if needed */
     }
 
     .big-heart h1 {
