@@ -150,12 +150,13 @@
       <h1>I love you, Adaeze!!!</h1>
     </div>
   </div>
- <!-- Audio element -->
-    <audio id="backgroundMusic" loop>
-      <source src="https://raw.githubusercontent.com/Sutanie/Hello-Kittyv2/3a8476408b68922a7dc8d7ab5af185ee60d09fb5/Cute%20Circus%20(Slowed%20and%20Reverb).mp3" type="audio/mpeg">
-      Your browser does not support the audio tag.
-    </audio>
-  </div>
+
+  <!-- Audio element for background music -->
+  <audio id="backgroundMusic" loop>
+    <source src="https://github.com/Sutanie/Hello-Kittyv2/blob/main/Cute%20Circus%20(Slowed%20and%20Reverb).mp3" type="audio/mpeg"> <!-- Replace with your audio file URL -->
+    Your browser does not support the audio element.
+  </audio>
+
   <script>
     // Function to handle login
     function login() {
@@ -168,6 +169,7 @@
         document.getElementById('loginContainer').style.display = 'none';
         document.getElementById('heartContainer').style.display = 'flex'; // Show heart container
         document.getElementById('bigHeart').style.display = 'flex'; // Show the big heart
+        document.getElementById('backgroundMusic').play(); // Play background music
       } else {
         alert("Invalid username or password. Please try again.");
       }
