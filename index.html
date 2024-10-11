@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -25,9 +25,37 @@
       position: relative;
       width: 100%;
       height: 100%;
-      background-color: pink;
-      overflow: hidden;
       text-align: center;
+    }
+
+    .heart {
+      background-color: red;
+      display: inline-block;
+      height: 30px;
+      margin: 0 10px;
+      position: relative;
+      transform: rotate(-45deg);
+      width: 30px;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      background-color: red;
+      border-radius: 50%;
+      height: 30px;
+      position: absolute;
+      width: 30px;
+    }
+
+    .heart:before {
+      top: -15px;
+      left: 0;
+    }
+
+    .heart:after {
+      left: 15px;
+      top: 0;
     }
 
     .big-heart {
@@ -35,13 +63,10 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 200px;  /* Adjusted size */
-      height: 200px; /* Adjusted size */
-      background-color: red;
       display: flex;
       justify-content: center;
       align-items: center;
-      clip-path: path('M 50 0 C 80 0, 100 30, 100 70 C 100 110, 50 200, 50 200 C 50 200, 0 110, 0 70 C 0 30, 20 0, 50 0 Z');
+      flex-direction: column; /* Added for vertical alignment */
     }
 
     .big-heart h1 {
@@ -85,6 +110,7 @@
 
     <!-- Big Heart with the message -->
     <div class="big-heart">
+      <div class="heart"></div> <!-- Heart shape -->
       <h1>I love you, Adaeze!!!</h1>
     </div>
   </div>
